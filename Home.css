@@ -36,6 +36,14 @@
     color: black;
 }
 
+/* Efecto de hover en los enlaces */
+.header .navbar ul.menu li a:hover {
+    transform: scale(1.5);  /* Aumenta el tamaño del enlace */
+    text-decoration: underline;  /* Subrayado al pasar el mouse */
+    color: #D45F00;  /* Color naranja */
+}
+
+
 .navbar .menu-bar{
     display: none;
 }
