@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../img/logo.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/font-awesome.css">
+    <script src="main.js" defer type="module"></script>
 
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
@@ -50,6 +51,11 @@
                 <input type="password" id="phone" name="contraseña" required  pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
 
                 <input type="submit" value="Login" id="btnSend">
+                <!-- Add Google Sign-In button with Google icon -->
+                <button id="google-login-btn" class="google-button">
+                    <i class="fab fa-google"></i> Login with Google
+                </button>
+                    
             </div>
         </form>
 
