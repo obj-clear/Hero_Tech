@@ -72,14 +72,19 @@
                 <input type="password" id="phone" name="contraseña" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
 
                 <input type="submit" value="Login" id="btnSend" class="btn btn-success">
+                <div>
+                    <!-- Botón de Google estilizado -->
+                    <button id="google-login-btn" class="btn btn-primary google-button d-flex align-items-center justify-content-center">
+                        <i class="fab fa-google me-3"></i> Login with Google
+                    </button>
+                </div>
                 
-                <!-- Botón de Google estilizado -->
-                <button id="google-login-btn" class="btn btn-primary google-button d-flex align-items-center justify-content-center">
-                    <i class="fab fa-google me-3"></i> Login with Google
-                </button>
             </div>
+            
         </form>
+        </div>
     </section>
+    
 </body>
 </html>
 

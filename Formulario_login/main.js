@@ -1,7 +1,7 @@
 
   
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-  import { getAuth ,GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+  import { getAuth ,GoogleAuthProvider ,signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
   
   const firebaseConfig = {
     apiKey: "AIzaSyAsBcvgdrqFM9dCS4NytDKjdYSwK_gqaGE",
@@ -18,3 +18,24 @@
   auth.languagecode = 'en'
 
   const provider = new GoogleAuthProvider();
+
+  const googleLogin = document.getElementById("google-login-btn");
+  googleLogin.addEventListener("click", function(){
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    console.log(user);
+    window.location.href = "logged.html";
+
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    
+  });
+
+
+
+
+
+  })
