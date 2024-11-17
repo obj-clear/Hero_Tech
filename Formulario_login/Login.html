@@ -84,6 +84,14 @@
         </form>
         </div>
     </section>
+    <script>
+        // Prevenir envío del formulario al hacer clic en "Login with Google"
+        document.getElementById("google-login-btn").addEventListener("click", function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+            // Lógica de autenticación con Google
+            console.log("Iniciar autenticación con Google");
+        });
+    </script>
     
 </body>
 </html>
