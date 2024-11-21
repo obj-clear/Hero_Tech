@@ -12,7 +12,7 @@
     appId: "1:46000541427:web:87846aa32c6932168ef186"
   };
 
-  // Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languagecode = 'en';
@@ -42,9 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
 
     if (params.get("auth") === "success") {
-        const modal = new bootstrap.Modal(document.getElementById("authSuccessModal"));
-        modal.show();
+        const toastElement = document.getElementById("authToast");
+        const toast = new bootstrap.Toast(toastElement, { delay: 2000 }); // Configura 2 segundos
+        toast.show();
     }
 });
-
-
