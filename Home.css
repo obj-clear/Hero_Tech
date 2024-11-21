@@ -17,6 +17,7 @@
     height: 50px;
     width: 250px;
     grid-column: 2/3;
+    margin-left: 20px; /* Asegura que el logo no esté pegado al borde izquierdo */
 }
 
 .navbar .menu{
@@ -42,7 +43,6 @@
     text-decoration: underline;  /* Subrayado al pasar el mouse */
     color: #D45F00;  /* Color naranja */
 }
-
 
 .navbar .menu-bar{
     display: none;
@@ -80,7 +80,7 @@
     color: white;
     background: none;
     padding: 15px 25px;
-    margin-top: 15px;
+    margin-top: 30px; /* Ajusta para que no esté pegado a la parte inferior */
     border-radius: 2em;
     background-color: #497188;
 }
@@ -200,4 +200,21 @@
 
 .footer .social-network ul li a:hover{
     transform: scale(1.75);
+}
+
+/* Estilos para el Toast (ventana emergente) */
+.position-fixed {
+    top: 0;
+    right: 0;
+    z-index: 1050;
+}
+
+.toast {
+    background-color: #28a745;  /* Verde para indicar éxito */
+    color: white;
+    font-size: 1.2em;
+}
+
+.toast .toast-body {
+    padding: 10px 20px;
 }
