@@ -78,62 +78,21 @@
                         <i class="fab fa-google me-3"></i> Login with Google
                     </button>
                 </div>
+                
             </div>
+            
         </form>
-    </section>
-
-    <!-- Modal de Bootstrap -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="successModalLabel">Autenticación Exitosa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Te has autenticado correctamente.</p>
-                </div>
-                <div class="modal-footer">
-                    <button id="close-modal-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
         </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Script de autenticación -->
+    </section>
     <script>
-        // Inicializar Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        auth.languagecode = 'en';
-
-        const provider = new GoogleAuthProvider();
-
-        const googleLogin = document.getElementById("google-login-btn");
-        googleLogin.addEventListener("click", function(event) {
+        // Prevenir envío del formulario al hacer clic en "Login with Google"
+        document.getElementById("google-login-btn").addEventListener("click", function(event) {
             event.preventDefault(); // Evita que el formulario se envíe
-            signInWithPopup(auth, provider)
-                .then((result) => {
-                    const user = result.user;
-                    console.log(user);
-
-                    // Mostrar modal de éxito
-                    const modal = new bootstrap.Modal(document.getElementById("successModal"));
-                    modal.show();
-
-                    // Redirigir al index al cerrar el modal
-                    document.getElementById("close-modal-btn").addEventListener("click", () => {
-                        window.location.href = "../index.html";
-                    });
-                })
-                .catch((error) => {
-                    console.error("Error de autenticación:", error);
-                });
+            // Lógica de autenticación con Google
+            console.log("Iniciar autenticación con Google");
         });
     </script>
+    
 </body>
 </html>
 
