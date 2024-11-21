@@ -15,35 +15,26 @@
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-auth.languagecode = 'en';
+auth.languageCode = 'en';
 
 const provider = new GoogleAuthProvider();
 
 const googleLogin = document.getElementById("google-login-btn");
-googleLogin.addEventListener("click", function () {
+googleLogin.addEventListener("click", function(){
     signInWithPopup(auth, provider)
-        .then((result) => {
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const user = result.user;
-            console.log(user);
-
-            // Redirige al index con el parámetro de autenticación exitosa
-            window.location.href = "../index.html?auth=success";
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.error("Error en la autenticación:", errorMessage);
-        });
-});
-
-// Detectar redirección tras autenticación exitosa
-document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-
-    if (params.get("auth") === "success") {
-        const toastElement = document.getElementById("authToast");
-        const toast = new bootstrap.Toast(toastElement, { delay: 2000 }); // Configura 2 segundos
-        toast.show();
-    }
+    .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const user = result.user;
+        console.log(user);
+        
+        // Guardamos el estado de autenticación exitosa en sessionStorage
+        sessionStorage.setItem('authSuccess', 'true');
+        
+        // Redirigir a index.html
+        window.location.href = "../index.html";
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorMessage);
+    });
 });
