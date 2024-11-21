@@ -1,5 +1,5 @@
 
-  
+ 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
   import { getAuth ,GoogleAuthProvider ,signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
   
@@ -13,29 +13,38 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  auth.languagecode = 'en'
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+auth.languagecode = 'en';
 
-  const provider = new GoogleAuthProvider();
+const provider = new GoogleAuthProvider();
 
-  const googleLogin = document.getElementById("google-login-btn");
-  googleLogin.addEventListener("click", function(){
+const googleLogin = document.getElementById("google-login-btn");
+googleLogin.addEventListener("click", function () {
     signInWithPopup(auth, provider)
-  .then((result) => {
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const user = result.user;
-    console.log(user);
-    window.location.href = "../index.html";
+        .then((result) => {
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const user = result.user;
+            console.log(user);
 
-  }).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    
-  });
+            // Redirige al index con el parámetro de autenticación exitosa
+            window.location.href = "../index.html?auth=success";
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error("Error en la autenticación:", errorMessage);
+        });
+});
+
+// Detectar redirección tras autenticación exitosa
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("auth") === "success") {
+        const modal = new bootstrap.Modal(document.getElementById("authSuccessModal"));
+        modal.show();
+    }
+});
 
 
-
-
-
-  })
