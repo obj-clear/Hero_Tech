@@ -13,7 +13,7 @@
     appId: "TU_APP_ID"
 };
 
-// Inicializar Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languageCode = 'en';
@@ -27,19 +27,15 @@ googleLogin.addEventListener("click", function(){
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const user = result.user;
         console.log(user);
-
-        // Redirigir a la página de inicio
-        window.location.href = "index.html";
+        
+        // Guardamos el estado de autenticación exitosa en sessionStorage
+        sessionStorage.setItem('authSuccess', 'true');
+        
+        // Redirigir a index.html
+        window.location.href = "../index.html";
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.error(errorMessage);
     });
-});
-
-// Mostrar el toast después de la autenticación exitosa
-window.addEventListener('load', () => {
-    if (window.location.pathname === '/index.html') {
-        const toast = new bootstrap.Toast(document.getElementById('login-toast'));
-        toast.show();
-    }
 });
