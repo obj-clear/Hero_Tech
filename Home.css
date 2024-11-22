@@ -144,53 +144,77 @@
     display: grid;
     align-items: center;
     text-align: center;
-    justify-content: center;
-    height: 300px;
-    background-color: #497188;
+    grid-template-areas: "addres follow-me social-network";
+    height: 100px;
     color: white;
+    background-color: black;
 }
 
-.footer h2 a{
+.footer .addres{
+    grid-template-areas: addres;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer .addres a{
     color: white;
-    font-size: 1.8em;
     text-decoration: none;
 }
 
-.footer a:hover{
-    text-decoration: underline;
+.footer .addres:hover{
+    transform: scale(1.5);
 }
 
-.footer .addres p{
-    font-size: 1.2em;
+.footer h2{
+    grid-template-areas: follow-me;
+    text-align: center;
+}
+
+.footer h2 a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer h2:hover{
+    transform: scale(1.5);
+}
+
+.footer .social-network{
+    grid-template-areas: social-network;
+    text-align: center;
+    font-size: 2em;
 }
 
 .footer .social-network ul{
     list-style: none;
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
 }
 
 .footer .social-network ul li{
-    padding: 0 20px;
-    font-size: 30px;
+    display: inline-block;
 }
 
+.footer .social-network ul li a{
+    color: white;
+    display: block;
+}
+
+.footer .social-network ul li a:hover{
+    transform: scale(1.75);
+}
+
+/* Estilos para el Toast (ventana emergente) */
 .position-fixed {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
+    top: 0;
+    right: 0;
+    z-index: 1050;
 }
 
 .toast {
-    background-color: #2ecc71;
+    background-color: #28a745;  /* Verde para indicar éxito */
     color: white;
-    border-radius: 5px;
-    padding: 10px 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.2em;
 }
 
-.toast-body {
-    font-size: 18px;
+.toast .toast-body {
+    padding: 10px 20px;
 }
