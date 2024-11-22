@@ -24,7 +24,7 @@
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const user = result.user;
     console.log(user);
-    window.location.href = "../index.html";
+    window.location.href = "../Proveedores/Proveedores.html";
 
   }).catch((error) => {
     const errorCode = error.code;

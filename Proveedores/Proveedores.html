@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-product {
+            transition: transform 0.3s ease;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 350px; /* Altura uniforme para todas las tarjetas */
+            margin-bottom: 20px;
+        }
+
+        .card-product:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .card-img-top {
+            object-fit: contain;
+            max-height: 150px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+        }
+
+        .btn-sm {
+            padding: 8px 12px;
+        }
+
+        .diamond-button {
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 8px 16px;
+            border: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .diamond-button:hover {
+            background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bg-info-light {
+            background-color: #d1ecf1;
+        }
+
+        .cart-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .cart-icon .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 12px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Servicios Section -->
+        <h2 class="text-center mb-4">Servicios <img width="48" height="48" src="https://img.icons8.com/color-glass/48/service.png" alt="service"/></h2>
+        
+        <!-- Lista desplegable de servicios -->
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Lista de Proveedores
+            </div>
+            <div class="card-body">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#servicesList" aria-expanded="false" aria-controls="servicesList">
+                    Mis Servicios
+                </button>
+                <div class="collapse mt-3" id="servicesList">
+                    <ul class="list-group">
+                        <li class="list-group-item">Reparación de dispositivos electrónicos</li>
+                        <li class="list-group-item">Mantenimiento preventivo y correctivo</li>
+                        <li class="list-group-item">Recuperación de datos</li>
+                        <li class="list-group-item">Instalación de sistemas operativos</li>
+                        <li class="list-group-item">Actualización de software y hardware</li>
+                        <li class="list-group-item">Limpieza interna y externa de dispositivos</li>
+                        <li class="list-group-item">Diagnóstico y presupuesto</li>
+                        <li class="list-group-item">Configuración de redes y periféricos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Dispositivos Electrónicos y Servicios -->
+        <h5 class="mt-4">Dispositivos Electrónicos y Servicios</h5>
+        <div class="row gy-3">
+            <!-- Producto 1: Reparación de Celulares -->
+            <div class="col-md-4">
+                <div class="card card-product">
+                    <img src="https://mobidoc.com.ar/wp-content/uploads/2020/10/reparacio%CC%81n-en-30-min.svg" class="card-img-top" alt="Reparación de Celulares">
+                    <div class="card-body">
+                        <h5 class="card-title">Reparación de Celulares</h5>
+                        <p class="card-text">S/ 150</p>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart()">Agregar al Carrito</button>
+                            <button class="diamond-button btn-sm">Usar Cupón</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2: Reparación de Laptops -->
+            <div class="col-md-4">
+                <div class="card card-product">
+                    <img src="https://dplnews.com/wp-content/uploads/2024/01/dplnews_Zenbook-DUO-asus_mc9124.png" class="card-img-top" alt="Reparación de Laptops">
+                    <div class="card-body">
+                        <h5 class="card-title">Reparación de Laptops</h5>
+                        <p class="card-text">S/ 300</p>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart()">Agregar al Carrito</button>
+                            <button class="diamond-button btn-sm">Usar Cupón</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3: Reparación de Tablets -->
+            <div class="col-md-4">
+                <div class="card card-product">
+                    <img src="https://estaticos-cdn.prensaiberica.es/clip/785109cd-fdc6-421f-9730-97971cad5ef9_16-9-discover-aspect-ratio_default_0.jpg" class="card-img-top" alt="Reparación de Tablets">
+                    <div class="card-body">
+                        <h5 class="card-title">Reparación de Tablets</h5>
+                        <p class="card-text">S/ 200</p>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart()">Agregar al Carrito</button>
+                            <button class="diamond-button btn-sm">Usar Cupón</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4: Recuperación de Datos -->
+            <div class="col-md-4">
+                <div class="card card-product">
+                    <img src="https://mlfk3cv5yvnx.i.optimole.com/cb:bn-b.2fe21/w:1200/h:627/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2023/10/N1-0665-Hard-Drive-Data-Recovery-blog-image.png" class="card-img-top" alt="Recuperación de Datos">
+                    <div class="card-body">
+                        <h5 class="card-title">Recuperación de Datos</h5>
+                        <p class="card-text">S/ 400</p>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart()">Agregar al Carrito</button>
+                            <button class="diamond-button btn-sm">Usar Cupón</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5: Instalación de SO -->
+            <div class="col-md-4">
+                <div class="card card-product">
+                    <img src="https://proytec.com.pa/wp-content/uploads/2021/08/Proytec_Imagen11.jpg" class="card-img-top" alt="Instalación de SO">
+                    <div class="card-body">
+                        <h5 class="card-title">Instalación de SO</h5>
+                        <p class="card-text">S/ 50</p>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart()">Agregar al Carrito</button>
+                            <button class="diamond-button btn-sm">Usar Cupón</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrito en esquina -->
+    <div class="cart-icon">
+        <a href="#" class="btn btn-light">
+            🛒 Carrito
+            <span id="cart-badge" class="badge rounded-pill bg-danger">0</span>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        let cartCount = 0;
+
+        // Función para agregar productos al carrito
+        function addToCart() {
+            cartCount++;
+            document.getElementById("cart-badge").textContent = cartCount;
+        }
+
+        // Función para quitar productos del carrito
+        function removeFromCart() {
+            if (cartCount > 0) {
+                cartCount--;
+                document.getElementById("cart-badge").textContent = cartCount;
+            }
+        }
+    </script>
+</body>
+</html>
+
