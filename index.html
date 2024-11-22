@@ -1,133 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeroTech</title>
-    <link rel="shortcut icon" href="img/logo.png">
-    <script src="https://kit.fontawesome.com/b98bbef25f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Home.css">
-    <!-- Agregar Bootstrap para el Toast -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Herotech</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que la ruta del archivo CSS sea correcta -->
 </head>
 <body>
+
+    <!-- Barra de Navegación -->
     <header class="header">
         <nav class="navbar">
-            <img src="img/logo.png" class="logo" alt="Mi Logo">
-            <ul class="menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="Formulario_pedido/PedidoHeroTech.html">HACER UN PEDIDO</a></li>
-                <li><a href="SobreNosotros.html">SOBRE NOSOTROS</a></li>
-                <li><a href="Formulario_login/Login.html">LOGIN</a></li>
-            </ul>
-            <div class="menu-bar">
-                <i class="fa-solid fa-bars"></i>
+            <div class="logo">
+                <img src="img/logo.png" alt="Herotech Logo"> <!-- Asegúrate de que la imagen esté en la ruta correcta -->
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="SobreNosotros.html">Nosotros</a></li>
+                    <li><a href="Formulario_pedido/PedidoHeroTech.html">Hacer un Pedido</a></li>
+                    <li><a href="Formulario_login/Login.html">Login</a></li>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <main class="hero">
+    <!-- Sección Hero -->
+    <section class="hero">
         <div class="info-content">
-            <h3>¿Qué somos?</h2>
-            <p>Un negocio local enfocado en soporte técnico de celulares, laptops y smartphones, especializado en brindar un servicio integral de atención al cliente mediante un conjunto de tendencias innovadoras basado en tres pilares: dark store, last mile on demand y tracking page, con la intención de proporcionar una experiencia segura, eficiente y a bajo costo.</p>
-            <button class="btn"><a href="SobreNosotros.html">Nosotros</a></button>
+            <h3>Bienvenido a Herotech</h3>
+            <p>Innovación y tecnología a tu alcance.</p>
+            <button class="btn">
+                <a href="SobreNosotros.html">Nosotros</a>
+            </button>
         </div>
-    </main>
+    </section>
 
-    <main class="products">
-        <h1>Servicios</h1>
+    <!-- Productos -->
+    <section class="products">
+        <h1>Productos Destacados</h1>
         <div class="imagen1">
             <img src="img/Computadora.jpg" alt="Computadora" width="300" height="200">
             <p class="text-products">Computadoras</p>
         </div>
-            
         <div class="imagen2">
             <img src="img/Celular.jpg" alt="Celular" width="300" height="200">
             <p class="text-products">Smartphones</p>
         </div>
-
         <div class="imagen3">
-            <img src="img/Tablets.jpg" alt="Código" width="300" height="200">
+            <img src="img/Tablets.jpg" alt="Tablets" width="300" height="200">
             <p class="text-products">Tablets</p>
         </div>
-    </main>
+    </section>
 
+    <!-- Pie de Página -->
     <footer class="footer">
         <div class="addres">
-            <a href="https://www.google.com/maps/place/Av.+Nicolas+de+Rivera+201,+San+Isidro+15076/@-12.0965581,-77.0424456,17z/data=!3m1!4b1!4m5!3m4!1s0x9105c85b48ccc929:0x29b986dc9a7afcdb!8m2!3d-12.0965634!4d-77.0402569" target="_blank">
-            <h4>Dirección</h4>
-            <p>Av. Nicolas de Rivera 201<br>Lima, Jesus María</p>
+            <a href="https://www.google.com/maps/place/Av.+Nicolas+de+Rivera+201,+San+Isidro+15076/" target="_blank">
+                <h4>Dirección</h4>
+                <p>Av. Nicolas de Rivera 201<br>Lima, Jesus María</p>
             </a>
         </div>
-
         <h2><a href="Formulario_contacto/contactame.html">¡Contáctanos!</a></h2>
-
         <div class="social-network">
             <ul>
-                <li><a href="https://www.facebook.com/" target="_blank" rel="noopenernoreferrer"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com/home?lang=es" target="_blank" rel="noopenernoreferrer"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/herotechunfv2022/" target="_blank" rel="noopenernoreferrer"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://pe.linkedin.com/" target="_blank" rel="noopenernoreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/home?lang=es" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/herotechunfv2022/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://pe.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul>
         </div>
     </footer>
 
-    <!-- Toast que aparecerá después del login -->
-    <div id="login-toast" class="toast position-fixed top-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-body">
-            <strong>¡Login exitoso!</strong> Has iniciado sesión correctamente.
+    <!-- Toast (Ventana Emergente) -->
+    <div class="position-fixed" id="toast-container" style="display: none;">
+        <div class="toast">
+            <div class="toast-body">
+                ¡Operación exitosa!
+            </div>
         </div>
     </div>
 
-    <!-- Agregar el script de Firebase y Bootstrap -->
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        // Configuración de Firebase
-        const firebaseConfig = {
-            apiKey: "TU_API_KEY",
-            authDomain: "TU_AUTH_DOMAIN",
-            projectId: "TU_PROJECT_ID",
-            storageBucket: "TU_STORAGE_BUCKET",
-            messagingSenderId: "TU_MESSAGING_SENDER_ID",
-            appId: "TU_APP_ID"
-        };
-
-        // Inicializar Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        auth.languageCode = 'en';
-
-        const provider = new GoogleAuthProvider();
-
-        const googleLogin = document.getElementById("google-login-btn");
-        googleLogin.addEventListener("click", function(){
-            signInWithPopup(auth, provider)
-            .then((result) => {
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const user = result.user;
-                console.log(user);
-
-                // Redirigir a la página de inicio
-                window.location.href = "index.html";
-            }).catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-            });
-        });
-
-        // Mostrar el toast después de la autenticación exitosa
-        window.addEventListener('load', () => {
-            if (window.location.pathname === '/index.html') {
-                const toast = new bootstrap.Toast(document.getElementById('login-toast'));
-                toast.show();
-            }
-        });
+        // Mostrar el Toast (ventana emergente) tras la autenticación exitosa
+        window.onload = function() {
+            // Aquí debes verificar si el usuario ha iniciado sesión correctamente
+            // Simularemos que la autenticación es exitosa y mostramos el toast
+            let toastContainer = document.getElementById("toast-container");
+            toastContainer.style.display = "block";
+            
+            // Hacer que el toast desaparezca después de 3 segundos
+            setTimeout(function() {
+                toastContainer.style.display = "none";
+            }, 3000);  // 3000 ms = 3 segundos
+        }
     </script>
+
 </body>
 </html>
+
 
 
