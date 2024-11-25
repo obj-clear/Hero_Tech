@@ -118,10 +118,30 @@
             width: 50px;
             height: 50px;
         }
+        
+        /* Estilo para el botón con icono de flecha */
+        .back-button-icon {
+            position: absolute;
+            top: 10px;
+            left: 30px; /* Mover más a la derecha */
+            z-index: 1000;
+            font-size: 24px; /* Reducir el tamaño del icono */
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .back-button-icon:hover {
+            transform: scale(1.1); /* Agrandar cuando el usuario pasa el cursor */
+        }
 
     </style>
 </head>
 <body>
+
+    <!-- Botón con icono de flecha para regresar al inicio -->
+    <a href="index.html">
+        <img class="back-button-icon" src="https://img.icons8.com/?size=100&id=11538&format=png&color=000000" alt="Regresar a la página principal"/>
+    </a> 
     <div class="container mt-5">
         <!-- Servicios Section -->
         <h2 class="text-center mb-4">Servicios <img width="48" height="48" src="https://img.icons8.com/color-glass/48/service.png" alt="service"/></h2>
