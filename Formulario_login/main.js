@@ -10,7 +10,8 @@
     appId: "1:46000541427:web:87846aa32c6932168ef186"
   };
 
-  // Inicializando Firebase sasafasfasf
+  // Inicializando Firebase
+  //xdddd
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   auth.languagecode = 'en'
